@@ -1,0 +1,5 @@
+3
+<id>,<name>,<description>,<prerequisite>,<antirequisite>,<labinfo>,<hours>,<credits>
+"000000000","Data Structure and Algorithms","This is Data Structure and Algorithms","/","/","No labs","20","3"
+"000000001","Programming Paradigms","This is Programming Paradigms","/","/","No labs","20","3"
+"000001000","QC","This is QC","/","/","No labs","20","3"
