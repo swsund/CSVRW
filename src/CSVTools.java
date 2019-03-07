@@ -10,6 +10,42 @@ public class CSVTools {
     private static final char DEFAULT_SEPARATOR = ',';
     private static final char DEFAULT_QUOTE = '"';
 
+    public static Item[] getFacultyList(){
+        
+        Item[] facultyList = null;
+        String csvFile = "./data/faculty.csv";
+    	try {
+    		scanner = new Scanner(new File(csvFile));
+            facultyList = new Item[Integer.parseInt(scanner.nextLine())];
+            scanner.nextLine();
+            int counter = 0;
+            while (scanner.hasNext()) {
+                List<String> line = parseLine(scanner.nextLine());
+                int tempChildren[] = new int[line.size()-3];
+                for(int i=3, j=0;i < line.size();i++, j++) {
+                    tempChildren[j] = Integer.parseInt(line.get(i));
+                }
+                facultyList[counter] = new Item("faculty", line.get(1), Integer.parseInt(line.get(0)), line.get(2), tempChildren);
+                counter++;
+            }
+            
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(null != scanner) {
+                    scanner.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    	return facultyList;
+
+    }
+    
     public static Item findItem(String type, String name) {
     	
     	String csvFile = "";
@@ -163,7 +199,8 @@ public class CSVTools {
     		fileio = new File("./data/"+newitem.type+".temp");
     		fileio.createNewFile();
     		String tempstr = null;
-    		writer = new FileOutputStream(fileio);
+            writer = new FileOutputStream(fileio);
+            // “/r/n" for windows... comment for linux and mac 
     		writer.write((Integer.parseInt(scanner.nextLine())+1+"\r\n").getBytes());
     		writer.write((scanner.nextLine()+"\r\n").getBytes());
             while(true) {
