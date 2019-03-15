@@ -1,4 +1,4 @@
 2
-<id>,<name>,<description>,<child>
-"00","Faculty of Science","This is the description of Faculty of Science","0000","0001"
-"5","Faculty of TEST","This is a test example","1","2","3"
+<0-id>,<1-name>,<2-description>,<3-parentID 65535>,<childID's...>
+"0","Faculty of Science","This is the description of Faculty of Science","65535","0000","0001"
+"5","Faculty of TEST","This is a test example","65535","2","3"

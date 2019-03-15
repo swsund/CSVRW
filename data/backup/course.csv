@@ -1,0 +1,4 @@
+2
+<0-id>,<1-name>,<2-description>,<3-num of prerequisite>,<4-num of antirequisite>,<5-labinfo>,<6-hours>,<7-credits>,<8-parentID>,<prerequisite.....>,<antirequisite....>
+"0000","Data Structure and Algorithms","This is Data Structure and Algorithms","0","0","No labs","20","3","0"
+"1000","QC","This is QC","0","0","No labs","20","3"
